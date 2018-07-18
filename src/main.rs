@@ -75,17 +75,7 @@ impl StreamHandler<ws::Message, ws::ProtocolError> for MyWebSocket {
 
 
 
-fn main() { 
-    Command::new("ps")
-        .args(&["aux", "test"])
-        .output()
-        .expect("failed to execute process")
-
-    println!(output.stdout);
-}
-
-fn main_1() {
-    let mut messages_array = [; 1000];
+fn main() {
     
     server::new(|| App::new()
         .resource("/", |r| r.f(index))
